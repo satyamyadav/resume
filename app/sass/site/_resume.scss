@@ -30,11 +30,132 @@
 						color: color("yellow", "lighten-1");
 						margin-top: 4px;
 						text-transform: capitalize;
-						
+
 						i {
 							margin-right: 5px;
 							color: #fff;
-						}	
+						}
+					}
+
+				}
+				.btn-round {
+					display: inline-block;
+					float: left;
+					background-color: $dark-1;
+				}
+			}
+		}
+
+	}
+
+	.right-container {
+
+
+	}
+
+
+
+
+
+}
+
+.resume-template-atom {
+	$atom-dark: #282c34;
+	$atom-darker: #21252b;
+	$atom-light: #353b45;
+	$atom-border: 1.5px solid black;
+
+	color: color("grey", "lighten-1");
+
+	.nav-tabs {
+		@mixin sudo-a() {
+			border-top: none;
+			border-left-color: color("teal", "darken-3");
+			border-left-width: 3px;
+			border-bottom: 1.5px solid;
+			border-bottom-color: $atom-dark;
+		}
+
+		background: $atom-darker;
+		box-shadow: 0 0 0 1px black inset;
+		border-bottom: none !important;
+		color: color("grey", "lighten-1");
+
+		li {
+			a {
+					border-radius: 0;
+					border-width: 1.5px;
+					border-left-color: transparent;
+					border-color: black;
+					margin-right: 0;
+					background-color: transparent;
+					color: color("grey", "base");
+				&:hover {
+					background-color: $atom-darker;
+				}
+			}
+			&.active {
+				a {
+					border-top-color: transparent;
+					border-right: $atom-border;
+					border-left-color: transparent;
+					border-bottom-color: $atom-dark;
+					background-color: $atom-dark;
+					color: color("grey", "lighten-1");
+					&:focus {
+						@include sudo-a();
+					}
+					&:hover {
+						@include sudo-a();
+					}
+					&:active {
+						@include sudo-a();
+					}
+				}
+			}
+		}
+	}
+
+	.media-body{
+		line-height: 30px;
+	}
+	.btn-square {
+		width: 35px;
+	}
+
+	.left-container {
+		border-right: $atom-border;
+		background-color: #21252b;
+		color: #fff;
+		.profile-label {
+			border-right: 4px solid $atom-light;
+			margin-right: -11px;
+			color: #fff;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: baseline;
+			background-color: #21252b;
+		}
+
+		.profile-details {
+			border-right: 4px solid $atom-light;
+			margin-right: -11px;
+			.list-group {
+				background-color: transparent;
+				.list-group-item {
+					background-color: transparent;
+					border: none;
+					color: color("yellow", "lighten-5");
+					margin-top: 20px;
+					.list-group-item-heading {
+						color: color("yellow", "lighten-1");
+						margin-top: 4px;
+						text-transform: capitalize;
+
+						i {
+							margin-right: 5px;
+							color: #fff;
+						}
 					}
 
 				}
@@ -67,7 +188,6 @@
 
 @media print {
 
-	
+
 
 }
-

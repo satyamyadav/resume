@@ -6250,10 +6250,10 @@ button.close {
   color: #a21318 !important; }
 
 .zam-grey.darken-4 {
-  background-color: #8b1014 !important; }
+  background-color: #282c34 !important; }
 
 .zam-grey-text.text-darken-4 {
-  color: #8b1014 !important; }
+  color: #282c34 !important; }
 
 .materialize-red.lighten-5 {
   background-color: #fdeaeb !important; }
@@ -19874,6 +19874,86 @@ body.mini-navbar .navbar-static-side {
       display: inline-block;
       float: left;
       background-color: #373B3E; }
+
+.resume-template-atom {
+  color: #bdbdbd; }
+  .resume-template-atom .nav-tabs {
+    background: #21252b;
+    box-shadow: 0 0 0 1px black inset;
+    border-bottom: none !important;
+    color: #bdbdbd; }
+    .resume-template-atom .nav-tabs li a, .resume-template-atom .nav-tabs .v-timeline .li-risk a, .v-timeline .resume-template-atom .nav-tabs .li-risk a, .resume-template-atom .nav-tabs .v-timeline .li-moderate a, .v-timeline .resume-template-atom .nav-tabs .li-moderate a, .resume-template-atom .nav-tabs .v-timeline .li-safe a, .v-timeline .resume-template-atom .nav-tabs .li-safe a {
+      border-radius: 0;
+      border-width: 1.5px;
+      border-left-color: transparent;
+      border-color: black;
+      margin-right: 0;
+      background-color: transparent;
+      color: #9e9e9e; }
+      .resume-template-atom .nav-tabs li a:hover, .resume-template-atom .nav-tabs .v-timeline .li-risk a:hover, .v-timeline .resume-template-atom .nav-tabs .li-risk a:hover, .resume-template-atom .nav-tabs .v-timeline .li-moderate a:hover, .v-timeline .resume-template-atom .nav-tabs .li-moderate a:hover, .resume-template-atom .nav-tabs .v-timeline .li-safe a:hover, .v-timeline .resume-template-atom .nav-tabs .li-safe a:hover {
+        background-color: #21252b; }
+    .resume-template-atom .nav-tabs li.active a, .resume-template-atom .nav-tabs .v-timeline .active.li-risk a, .v-timeline .resume-template-atom .nav-tabs .active.li-risk a, .resume-template-atom .nav-tabs .v-timeline .active.li-moderate a, .v-timeline .resume-template-atom .nav-tabs .active.li-moderate a, .resume-template-atom .nav-tabs .v-timeline .active.li-safe a, .v-timeline .resume-template-atom .nav-tabs .active.li-safe a {
+      border-top-color: transparent;
+      border-right: 1.5px solid black;
+      border-left-color: transparent;
+      border-bottom-color: #282c34;
+      background-color: #282c34;
+      color: #bdbdbd; }
+      .resume-template-atom .nav-tabs li.active a:focus, .resume-template-atom .nav-tabs .v-timeline .active.li-risk a:focus, .v-timeline .resume-template-atom .nav-tabs .active.li-risk a:focus, .resume-template-atom .nav-tabs .v-timeline .active.li-moderate a:focus, .v-timeline .resume-template-atom .nav-tabs .active.li-moderate a:focus, .resume-template-atom .nav-tabs .v-timeline .active.li-safe a:focus, .v-timeline .resume-template-atom .nav-tabs .active.li-safe a:focus {
+        border-top: none;
+        border-left-color: #00695c;
+        border-left-width: 3px;
+        border-bottom: 1.5px solid;
+        border-bottom-color: #282c34; }
+      .resume-template-atom .nav-tabs li.active a:hover, .resume-template-atom .nav-tabs .v-timeline .active.li-risk a:hover, .v-timeline .resume-template-atom .nav-tabs .active.li-risk a:hover, .resume-template-atom .nav-tabs .v-timeline .active.li-moderate a:hover, .v-timeline .resume-template-atom .nav-tabs .active.li-moderate a:hover, .resume-template-atom .nav-tabs .v-timeline .active.li-safe a:hover, .v-timeline .resume-template-atom .nav-tabs .active.li-safe a:hover {
+        border-top: none;
+        border-left-color: #00695c;
+        border-left-width: 3px;
+        border-bottom: 1.5px solid;
+        border-bottom-color: #282c34; }
+      .resume-template-atom .nav-tabs li.active a:active, .resume-template-atom .nav-tabs .v-timeline .active.li-risk a:active, .v-timeline .resume-template-atom .nav-tabs .active.li-risk a:active, .resume-template-atom .nav-tabs .v-timeline .active.li-moderate a:active, .v-timeline .resume-template-atom .nav-tabs .active.li-moderate a:active, .resume-template-atom .nav-tabs .v-timeline .active.li-safe a:active, .v-timeline .resume-template-atom .nav-tabs .active.li-safe a:active {
+        border-top: none;
+        border-left-color: #00695c;
+        border-left-width: 3px;
+        border-bottom: 1.5px solid;
+        border-bottom-color: #282c34; }
+  .resume-template-atom .media-body {
+    line-height: 30px; }
+  .resume-template-atom .btn-square {
+    width: 35px; }
+  .resume-template-atom .left-container {
+    border-right: 1.5px solid black;
+    background-color: #21252b;
+    color: #fff; }
+    .resume-template-atom .left-container .profile-label {
+      border-right: 4px solid #353b45;
+      margin-right: -11px;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      background-color: #21252b; }
+    .resume-template-atom .left-container .profile-details {
+      border-right: 4px solid #353b45;
+      margin-right: -11px; }
+      .resume-template-atom .left-container .profile-details .list-group {
+        background-color: transparent; }
+        .resume-template-atom .left-container .profile-details .list-group .list-group-item {
+          background-color: transparent;
+          border: none;
+          color: #fffde7;
+          margin-top: 20px; }
+          .resume-template-atom .left-container .profile-details .list-group .list-group-item .list-group-item-heading {
+            color: #ffee58;
+            margin-top: 4px;
+            text-transform: capitalize; }
+            .resume-template-atom .left-container .profile-details .list-group .list-group-item .list-group-item-heading i {
+              margin-right: 5px;
+              color: #fff; }
+        .resume-template-atom .left-container .profile-details .list-group .btn-round {
+          display: inline-block;
+          float: left;
+          background-color: #373B3E; }
 
 @media (min-width: 1200px) {
   .resume-template-default {

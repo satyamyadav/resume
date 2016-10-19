@@ -435,3 +435,10 @@ app.utils.getPartial = function (url, partial, $parent) {
       scrollTop: $div.offset().top
     }, 2000);
   };
+
+  app.utils.getParameterByName = function(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  };

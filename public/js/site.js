@@ -512,6 +512,13 @@ app.utils.getPartial = function (url, partial, $parent) {
     }, 2000);
   };
 
+  app.utils.getParameterByName = function(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  };
+
 // modal bg-z-index
 app.utils.modalBgZIndex = 1050;
 
@@ -719,8 +726,9 @@ app.components.site = function($site) {
 var $downloadResume = app.$body.find('.download-resume');
 
 function displayData(data) {
-
-  app.utils.ajax.get('public/views/main.html').then(function(tmpl){
+  var templateTheme = app.utils.getParameterByName('theme');
+  templateTheme = templateTheme == '' ? 'main' : templateTheme;
+  app.utils.ajax.get('public/views/' + templateTheme + '.html').then(function(tmpl){
 
     var compiled_html = _.template(tmpl)({
       resume: data

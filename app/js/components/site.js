@@ -3,8 +3,9 @@ app.components.site = function($site) {
 var $downloadResume = app.$body.find('.download-resume');
 
 function displayData(data) {
-
-  app.utils.ajax.get('public/views/main.html').then(function(tmpl){
+  var templateTheme = app.utils.getParameterByName('theme');
+  templateTheme = templateTheme == '' ? 'main' : templateTheme;
+  app.utils.ajax.get('public/views/' + templateTheme + '.html').then(function(tmpl){
 
     var compiled_html = _.template(tmpl)({
       resume: data
