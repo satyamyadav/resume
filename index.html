@@ -25,24 +25,54 @@
 
     <div id="main-app"></div>
 
-    <!-- button download PDF -->
+    <!-- button download PDF or Print -->
     <div class="text-center hidden-print">
       <a href="#" title="Donwload Resume PDF" class="btn-round btn-float hidden-print download-resume teal-text animated fadeInRight">
-        <i class="fa fa-download teal-text"></i>
+        <i class="fa fa-print teal-text"></i>
       </a>
     </div><!--/ button download PDF -->
 
-    <div class="btn-round btn-float hidden-print settings-button animated fadeInRight">
+    <!-- <div class="btn-round btn-float hidden-print animated fadeInRight"> -->
 
-      <script type="text/javascript">
-        $(function(){
-          app.components.settingsBtn($('.settings-button'));
-        });
-      </script>
-
-      <i class="fa fa-pencil fa-2x margin-top-3 margin-bottom-3 red-text"></i>
-
-    </div>
+    
+    <div class="dropup btn-round btn-float hidden-print animated fadeInRight no-padding">
+      <a class="dropdown-toggle btn-round" id="setting-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-cog margin-top-3 margin-bottom-3 red-text"></i>
+      </a>
+      
+      <div class="dropdown-menu dropdown-menu-left" aria-labelledby="setting-menu" style="min-width:0px">
+        <!-- <li> -->
+          <a href="#" class="settings-button btn-round btn-float margin-bottom-20" title="Edit Resume">
+            
+            <script type="text/javascript">
+            $(function(){
+              app.components.settingsBtn($('.settings-button'));
+            });
+            </script>
+            
+            <i class="fa fa-pencil margin-top-3 margin-bottom-3 red-text"></i>
+          
+          </a>
+          
+          <a href="#" class="btn-round btn-float margin-bottom-60 theme-button" title="change theme">
+            <script type="text/javascript">
+            $(function(){
+              app.components.themeBtn($('.theme-button'));
+            });
+            </script>
+            <i class="fa fa-th margin-top-3 margin-bottom-3 red-text"></i>
+            
+          </a>
+          
+        <!-- </li> -->
+        <!-- <li><a href="#"></a></li> -->
+        <!-- <li><a href="#"></a></li> -->
+        <!-- <li role="separator" class="divider"></li> -->
+        <!-- <li><a href="#"></a></li> -->
+      <!-- </div> -->
+    </div>  
+  </div>
+    
 
     <script src="public/js/site.js"></script>
 
@@ -53,6 +83,8 @@
     </script>
 
     <div class="modal" id="resumeModal" role="dialog" aria-labelledby="projectModalBox">
+    </div>
+    <div class="modal" id="themeModal" role="dialog" aria-labelledby="projectModalBox">
     </div>
 
   </body>

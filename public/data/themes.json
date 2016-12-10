@@ -1,0 +1,12 @@
+{
+  "themes": {
+    "default" : {
+      "name": "main",
+      "preview": "public/img/previews/default-theme.png"
+    },
+    "atom": {
+      "name": "atom",
+      "preview": "public/img/previews/atom-theme.png"
+    }
+  }
+}

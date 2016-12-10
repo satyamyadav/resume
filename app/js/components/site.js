@@ -3,7 +3,9 @@ app.components.site = function($site) {
 var $downloadResume = app.$body.find('.download-resume');
 
 function displayData(data) {
-  var templateTheme = app.utils.getParameterByName('theme');
+  var paramTheme = app.utils.getParameterByName('theme');
+  console.log(paramTheme);
+  var templateTheme = paramTheme != '' ? paramTheme : data.theme; 
   templateTheme = templateTheme == '' ? 'main' : templateTheme;
   app.utils.ajax.get('public/views/' + templateTheme + '.html').then(function(tmpl){
 
@@ -18,7 +20,6 @@ function displayData(data) {
 }
 
 (function() {
-
 
   if(typeof(Storage) !== "undefined") {
     var resumeData = {};
@@ -40,9 +41,10 @@ function displayData(data) {
 
 
   $downloadResume.find('span').html('download Resume');
-  $downloadResume.on('click', function (ev) {
-  ev.preventDefault();
 
+  $downloadResume.on('click', function (ev) {
+
+  ev.preventDefault();
   window.print();
 
   });

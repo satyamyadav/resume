@@ -142,4 +142,5 @@ gulp.task('watch', [ 'assets', 'template', 'app', 'sass' ], function () {
   //gulp.watch(['./assets/**/*.*'], ['assets']);
   gulp.watch(['./app/sass/**/*.*'], ['sass']);
   gulp.watch(['./app/js/**/*.*'], ['app']);
+  gulp.watch(['./app/views/**/*.*'], ['template']);
 });

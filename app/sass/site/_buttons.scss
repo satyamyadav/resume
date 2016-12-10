@@ -33,6 +33,15 @@
 
 }
 
+.btn-sam {
+	@extend .btn;
+	background-color: color("zam-grey", "base");
+	color: $light-text;
+	&:hover {
+		color: #fff;
+	}
+}
+
 
 .download-resume {
 	@extend .btn-float;

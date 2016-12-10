@@ -687,6 +687,58 @@ app.components.settingsBtn = function($btn) {
 
 
 }
+app.components.themeBtn = function($btn) {
+
+	$btn.on('click', function(ev){
+		ev.preventDefault();
+		console.log('themes btn clicked');
+    
+		if(typeof(Storage) !== "undefined") {
+	    var themes = {};
+	          // Code for localStorage/sessionStorage.
+	    if (localStorage.themes) {
+	      // console.log('mila')
+	      themes = JSON.parse(window.localStorage.getItem('themes'));
+				displayData(themes, 'modals/themeModal', $('#themeModal'));
+				
+	    } else {
+	      // console.log('nahi mila')
+	      app.utils.ajax.get('public/data/themes.json').then(function(data){
+	        localStorage.setItem('themes', JSON.stringify(data));
+					displayData(data, 'modals/themeModal', $('#themeModal'));
+
+	      });
+	    }
+	  } else {
+	      // Sorry! No Web Storage support..
+	  }
+		
+		
+    // var data = JSON.parse(window.localStorage.getItem('themes'));
+
+    app.utils.loadModal('#themeModal');
+	})
+
+
+	function displayData(data, template, $target) {
+	  var templateUrl = 'public/views/' + template + '.html';
+	  app.utils.ajax.get(templateUrl).then(function(tmpl){
+
+	    var compiled_html = _.template(tmpl)({
+	      data: data
+	    });
+
+	    // appent to body
+	    $target.html(compiled_html);
+	    // $target.find('img').each(function () {
+	    //   var $this = $(this);
+	    //   app.utils.loadImg($this);
+	    // });
+	  });
+	}
+
+
+}
 app.components.resumeModal = function($modal) {
 
 	var $updateResume = $modal.find('.update-resume');
@@ -721,12 +773,63 @@ app.components.resumeModal = function($modal) {
 
 }
 
+app.components.themeModal = function($modal) {
+
+	var $selectBtn = $modal.find('.select-theme-button');
+	var $applyBtn = $modal.find('.apply-theme-button');
+	var selectedTheme = 'main';
+	var $msg = $modal.find('.selected-theme');
+	
+	$selectBtn.on('click', function(ev){
+		ev.preventDefault();
+		var $this = $(this);
+			
+		selectedTheme = $this.data('theme');
+		$msg.html('Theme selected: ' + selectedTheme);	
+		
+	});	
+	
+	$applyBtn.on('click', function(ev){
+		ev.preventDefault();
+    
+		
+		var resume = JSON.parse(window.localStorage.getItem('resumeData'));
+		resume['theme'] = selectedTheme;
+    localStorage.setItem('resumeData', JSON.stringify(resume));
+
+    location.reload();
+
+	})
+
+
+
+}
+
+// 
+// lol ;) if it was hard to write ! it would be harder to read !! the hackish bhasad
+// 
+app.components.tabActivators = function($tabContainer) {
+	var $tabs = $tabContainer.find('.list-tabs');
+  var $tab = $tabs.find('li').find('a');
+	var $navTabs = $('#main-app').find('.nav-tabs');
+	$tab.on('click', function(ev){
+		ev.preventDefault();
+		var $this = $(this);
+		var link = $this.attr('href');
+		// console.log('tab  clicked', $this.attr('href'));
+    var $targetLink = $navTabs.find('a[href=' + link +']')
+    $targetLink.click();
+	})
+
+}
 app.components.site = function($site) {
 
 var $downloadResume = app.$body.find('.download-resume');
 
 function displayData(data) {
-  var templateTheme = app.utils.getParameterByName('theme');
+  var paramTheme = app.utils.getParameterByName('theme');
+  console.log(paramTheme);
+  var templateTheme = paramTheme != '' ? paramTheme : data.theme; 
   templateTheme = templateTheme == '' ? 'main' : templateTheme;
   app.utils.ajax.get('public/views/' + templateTheme + '.html').then(function(tmpl){
 
@@ -741,7 +844,6 @@ function displayData(data) {
 }
 
 (function() {
-
 
   if(typeof(Storage) !== "undefined") {
     var resumeData = {};
@@ -763,9 +865,10 @@ function displayData(data) {
 
 
   $downloadResume.find('span').html('download Resume');
-  $downloadResume.on('click', function (ev) {
-  ev.preventDefault();
 
+  $downloadResume.on('click', function (ev) {
+
+  ev.preventDefault();
   window.print();
 
   });

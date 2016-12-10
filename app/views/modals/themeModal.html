@@ -1,0 +1,59 @@
+    <script type="text/javascript">
+      $(function(){
+        app.components.themeModal($('#themeModal'));
+      });
+    </script>
+
+<div class="modal-dialog modal-lg">
+  <div class="modal-content animated fadeInUp">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title">Themes  </h4>
+      <small>Choose themes</small>
+    </div>
+    <div class="modal-body zam-grey">
+
+      <div class="row text-center">
+        
+        <% _.forEach(data.themes, function(t){ %> 
+          <div class="col-sm-6">
+            <div class="card padding-10">
+              <img class="img-responsive" src="<%= t.preview %>" alt="" />
+              <div class="row padding-top-20">
+                <div class="col-sm-6">
+                <p class="">
+                  <%= t.name %>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                
+                <a class="btn select-theme-button pull-right" data-theme="<%= t.name %>">
+                  Select
+                </a>
+              </div>
+              </div>  
+            </div>
+          </div>
+        <%  }) %>  
+        
+      </div>
+    </div>
+
+    <div class="modal-footer fixed">
+      <div class="pull-left">
+        <!-- <img src="" alt="" /> -->
+        <p class="selected-theme">
+          
+        </p>
+      </div>
+      <div class="btn-sam pull-right apply-theme-button">
+        Apply
+      </div>
+      <div class="btn btn-flat pull-right margin-right-10" data-dismiss="modal" aria-label="Close">
+        Cancle
+      </div>
+    </div>
+
+
+  </div>
+</div>
