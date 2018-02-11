@@ -1,14 +1,12 @@
 {
   "name": "complex-frontend",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "complex-frontend",
-  
   "apps": [
     "site"
   ],
   "author": "Satyam Yadav",
   "license": "MIT",
-  
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.11",
